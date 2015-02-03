@@ -10,8 +10,8 @@ window.TrelloClone = {
       }
     });
 
-    TrelloClone.lists = new TrelloClone.Collections.Lists({ });
-    TrelloClone.lists.fetch();
+    // TrelloClone.lists = new TrelloClone.Collections.Lists();
+    // TrelloClone.lists.fetch();
 
     new TrelloClone.Routers.Boards({ $rootEl: $('body') });
     Backbone.history.start();

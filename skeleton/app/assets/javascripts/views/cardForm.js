@@ -1,8 +1,8 @@
-TrelloClone.Views.ListForm = Backbone.CompositeView.extend({
-  template: JST['lists/list_form'],
+TrelloClone.Views.CardForm = Backbone.CompositeView.extend({
+  template: JST['cards/card_form'],
 
   events: {
-    "submit form": "createList"
+    "submit form": "createCard"
   },
 
   render: function () {
@@ -12,16 +12,15 @@ TrelloClone.Views.ListForm = Backbone.CompositeView.extend({
     return this;
   },
 
-  createList: function (event) {
+  createCard: function (event) {
     event.preventDefault();
 
     this.collection.create({
       title: this.$('textarea').val(),
-      board_id: this.collection.board.id
+      list_id: this.collection.list.id
     }, { wait: true });
-
 
     this.$('textarea').val('');
     this.$('textarea').focus();
   }
-})
+});
